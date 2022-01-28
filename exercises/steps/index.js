@@ -11,12 +11,36 @@
 //       '#  '
 //       '## '
 //       '###'
-//   steps(4)
+steps(4);
 //       '#   '
 //       '##  '
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+  // for (let i = 1; i <= n; i++) {
+  //   str1 = [...Array(i).keys()].reduce((c, p) => c + "#", "");
+  //   str2 = [...Array(n - i).keys()].reduce((c, p) => c + " ", "");
+  //   str3 = str1 + str2;
+  //   console.log(str3);
+  // }
+
+  // for (let i of [...Array(n).keys()]) {
+  //   let stair = "";
+  //   for (let j of [...Array(n).keys()]) {
+  //     if (j <= i) stair += "#";
+  //     else stair += " ";
+  //   }
+  //   console.log(stair);
+  // }
+
+  //Recursion and space ignored
+  //Base condition
+  if (n == 1) console.log("#");
+  else {
+    steps(n - 1);
+    console.log("#".repeat(n));
+  }
+}
 
 module.exports = steps;
